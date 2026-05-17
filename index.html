@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emerson Personal — Treino Personalizado Online</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230070c4'/><text y='22' x='50%' text-anchor='middle' font-size='18' font-family='Arial' font-weight='bold' fill='%2334ef91'>EP</text></svg>">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Emerson Personal — Treino Personalizado Online">
+    <meta property="og:description" content="Treino feito pra você, vídeos de cada exercício e acompanhamento real no WhatsApp. Planos a partir de R$497.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/joseluizrocha7-oss/emerson-personal/master/assets/phones3.webp">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Emerson Personal — Treino Personalizado Online">
+    <meta name="twitter:description" content="Treino feito pra você, vídeos de cada exercício e acompanhamento real no WhatsApp.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/joseluizrocha7-oss/emerson-personal/master/assets/phones3.webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -168,6 +179,34 @@
         .f-logo{font-family:'Barlow Semi Condensed',sans-serif;font-style:italic;font-weight:700;color:#fff;font-size:1.1rem}
         .f-logo b{color:var(--green);font-style:normal}
         .f-cp{font-size:.76rem;color:rgba(255,255,255,.2)}
+
+        /* SCARCITY BAR */
+        .sc-bar{background:linear-gradient(90deg,#082b14,#0f5c2a);border:1px solid rgba(52,239,145,.22);border-radius:10px;padding:14px 22px;display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:28px;font-size:.875rem;color:rgba(255,255,255,.78);flex-wrap:wrap;text-align:center}
+        .sc-bar strong{color:var(--gbr)}
+        .sc-pulse{width:8px;height:8px;background:var(--gbr);border-radius:50%;flex-shrink:0;animation:blink 1.4s ease-in-out infinite}
+
+        /* TOAST */
+        .toast-wrap{position:fixed;bottom:24px;left:24px;z-index:9999;max-width:290px;pointer-events:none}
+        .toast{background:#fff;border-radius:12px;padding:13px 15px;box-shadow:0 8px 32px rgba(0,0,0,.18);display:flex;align-items:center;gap:11px;opacity:0;transform:translateY(16px);transition:opacity .4s,transform .4s}
+        .toast.show{opacity:1;transform:translateY(0)}
+        .t-ico{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--ha),var(--hb));display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;font-weight:700;font-size:.78rem}
+        .t-txt{line-height:1.3;min-width:0}
+        .t-name{font-size:.79rem;font-weight:700;color:var(--dk)}
+        .t-info{font-size:.71rem;color:var(--muted);margin-top:2px}
+        .t-plan{color:var(--blue);font-weight:600}
+        .t-time{font-size:.64rem;color:#bbb;margin-top:3px}
+
+        /* TESTIMONIALS */
+        .ts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+        .ts-card{background:#fff;border-radius:16px;padding:28px;box-shadow:0 2px 20px rgba(0,112,196,.08);border:1px solid #deeaf7;transition:transform .2s,box-shadow .2s}
+        .ts-card:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(0,112,196,.13)}
+        .ts-stars{color:#f59e0b;font-size:.95rem;letter-spacing:2px;margin-bottom:13px}
+        .ts-text{font-size:.875rem;color:var(--muted);line-height:1.75;margin-bottom:18px;font-style:italic}
+        .ts-author{display:flex;align-items:center;gap:10px}
+        .ts-av{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--ha),var(--hb));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.78rem;flex-shrink:0}
+        .ts-name{font-size:.81rem;font-weight:700;color:var(--dk)}
+        .ts-loc{font-size:.71rem;color:#aab;margin-top:2px}
+        @media(max-width:760px){.ts-grid{grid-template-columns:1fr}.toast-wrap{left:12px;bottom:12px;max-width:calc(100vw - 24px)}}
 
         /* REVEAL */
         .r{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease}
@@ -370,10 +409,61 @@
     </div>
 </section>
 
+<!-- DEPOIMENTOS -->
+<section class="sec">
+    <div class="si">
+        <div class="r" style="text-align:center;max-width:520px;margin:0 auto">
+            <span class="tag">Resultados reais</span>
+            <h2 class="ttl" style="margin-inline:auto">O que os alunos <b>estão dizendo</b></h2>
+        </div>
+        <div class="ts-grid">
+            <div class="ts-card r">
+                <div class="ts-stars">★★★★★</div>
+                <p class="ts-text">"Nunca pensei que ia conseguir manter constância nos treinos. Com o Emerson, o plano é feito pra minha rotina — hoje não paro mais."</p>
+                <div class="ts-author">
+                    <div class="ts-av">RL</div>
+                    <div>
+                        <div class="ts-name">Rafael L.</div>
+                        <div class="ts-loc">São Paulo · Plano Semestral</div>
+                    </div>
+                </div>
+            </div>
+            <div class="ts-card r">
+                <div class="ts-stars">★★★★★</div>
+                <p class="ts-text">"Em 3 meses perdi 8kg e finalmente aprendi a executar os exercícios certo. Os vídeos fazem toda a diferença — sem dúvida de como fazer."</p>
+                <div class="ts-author">
+                    <div class="ts-av">FM</div>
+                    <div>
+                        <div class="ts-name">Fernanda M.</div>
+                        <div class="ts-loc">Campinas · Plano Trimestral</div>
+                    </div>
+                </div>
+            </div>
+            <div class="ts-card r">
+                <div class="ts-stars">★★★★★</div>
+                <p class="ts-text">"Treino em casa com pouco equipamento e o Emerson adaptou tudo certinho. App fácil de usar e o suporte no WhatsApp é super rápido."</p>
+                <div class="ts-author">
+                    <div class="ts-av">GT</div>
+                    <div>
+                        <div class="ts-name">Gustavo T.</div>
+                        <div class="ts-loc">Ribeirão Preto · Plano Anual</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- PLANS + SECURITY -->
 <section class="pl-sec" id="planos">
     <svg style="position:absolute;top:0;left:0;width:100%;pointer-events:none;opacity:.07" viewBox="0 0 1440 80"><path d="M0 40C360 80 720 0 1440 40V0H0V40Z" fill="white"/></svg>
     <div style="position:relative;z-index:2">
+        <div style="max-width:900px;margin:0 auto;padding:0 30px;position:relative;z-index:2">
+            <div class="sc-bar r">
+                <div class="sc-pulse"></div>
+                Restam apenas <strong>9 vagas</strong> para novos alunos em maio — oferta encerra em breve
+            </div>
+        </div>
         <div class="pl-hd r">
             <span class="tag">Planos</span>
             <h2>Invista em você.<br>Escolha seu plano.</h2>
@@ -497,6 +587,18 @@
     <div class="f-cp">© 2025 Emerson Personal. Todos os direitos reservados.</div>
 </footer>
 
+<!-- TOAST PROVA SOCIAL -->
+<div class="toast-wrap">
+    <div class="toast" id="ep-toast">
+        <div class="t-ico" id="t-ico"></div>
+        <div class="t-txt">
+            <div class="t-name" id="t-name"></div>
+            <div class="t-info" id="t-city"></div>
+            <div class="t-time" id="t-time"></div>
+        </div>
+    </div>
+</div>
+
 <script>
     const io = new IntersectionObserver(entries => {
         entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
@@ -505,6 +607,31 @@
         el.style.transitionDelay = `${(i % 4) * 0.07}s`;
         io.observe(el);
     });
+    // Toast de prova social
+    const buys = [
+        {ini:'CM',name:'Carlos M.',city:'São Paulo',plan:'Plano Semestral',time:'2 min atrás'},
+        {ini:'AR',name:'Ana Paula R.',city:'Campinas',plan:'Plano Anual',time:'6 min atrás'},
+        {ini:'MS',name:'Marcelo S.',city:'Curitiba',plan:'Plano Trimestral',time:'11 min atrás'},
+        {ini:'JF',name:'Juliana F.',city:'Ribeirão Preto',plan:'Plano Semestral',time:'19 min atrás'},
+        {ini:'DN',name:'Diego N.',city:'Belo Horizonte',plan:'Plano Anual',time:'28 min atrás'},
+        {ini:'CV',name:'Camila V.',city:'Santos',plan:'Plano Trimestral',time:'35 min atrás'},
+        {ini:'BO',name:'Bruno O.',city:'Brasília',plan:'Plano Semestral',time:'47 min atrás'},
+        {ini:'LA',name:'Letícia A.',city:'Sorocaba',plan:'Plano Anual',time:'1 h atrás'},
+    ];
+    let tIdx = 0;
+    function showToast() {
+        const b = buys[tIdx % buys.length]; tIdx++;
+        const el = document.getElementById('ep-toast');
+        document.getElementById('t-ico').textContent = b.ini;
+        document.getElementById('t-name').textContent = b.name;
+        document.getElementById('t-city').innerHTML = b.city + ' acabou de assinar o <span class="t-plan">' + b.plan + '</span>';
+        document.getElementById('t-time').textContent = b.time;
+        el.classList.add('show');
+        setTimeout(() => el.classList.remove('show'), 4500);
+        setTimeout(showToast, Math.random() * 14000 + 12000);
+    }
+    setTimeout(showToast, 6000);
+
     document.querySelectorAll('.faq-q').forEach(q => {
         q.addEventListener('click', () => {
             const item = q.parentElement;
